@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AbGlo Vibration Video</title>
+  <style>
+    body {
+      background: #f9f9f9;
+      font-family: sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+    video {
+      width: 80%;
+      max-width: 720px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>AbGlo Vibration Cue</h1>
+  <video 
+    autoplay 
+    loop 
+    playsinline 
+    controls 
+    id="myVideo">
+    <source src="lights-vibration.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    window.addEventListener("load", () => {
+      const video = document.getElementById("myVideo");
+      video.muted = false;
+      video.play().catch(e => {
+        console.warn("Autoplay with sound was blocked by the browser:", e);
+      });
+    });
+  </script>
+
+</body>
+</html>
